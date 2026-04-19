@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Biodata</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-flower">
+    <!-- NAVBAR -->
+    <nav>
+      <a href="index.html">🏠 Back</a>
+    </nav>
+
+    <div class="box">
+      <h2>💚 Form Biodata 💚</h2>
+
+      <!-- FORM -->
+      <form onsubmit="tampilData(event)">
+        <input type="text" id="nama" placeholder="Nama" /><br />
+        <input type="text" id="nim" placeholder="NIM" /><br />
+        <input type="text" id="prodi" placeholder="Prodi" /><br />
+        <input type="email" id="email" placeholder="Email" /><br />
+
+        <button type="submit">Submit 💖</button>
+      </form>
+
+      <!-- HASIL MUNCUL DI SINI -->
+      <div id="hasil" style="margin-top: 20px"></div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+      function tampilData(e) {
+        e.preventDefault(); // biar tidak reload
+
+        let nama = document.getElementById("nama").value;
+        let nim = document.getElementById("nim").value;
+        let prodi = document.getElementById("prodi").value;
+        let email = document.getElementById("email").value;
+
+        document.getElementById("hasil").innerHTML = `
+        <h3>💚 Data Tersimpan 💚</h3>
+        <p>Nama: ${nama}</p>
+        <p>NIM: ${nim}</p>
+        <p>Prodi: ${prodi}</p>
+        <p>Email: ${email}</p>
+      `;
+      }
+    </script>
+  </body>
+</html>
